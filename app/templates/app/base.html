@@ -1,0 +1,27 @@
+{% load static %}
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="{% static 'app/css/style.css' %}">
+	<title>{{ title }}</title>
+</head>
+<header>
+	<div class="menu">
+		<a href="#"><img src="{% static 'app/img/GAMEHUB.png' %}" class="logo"></a>
+		<nav class="menu-nav">
+			<span class="menu-link">Девайсы</span>
+			<span class="menu-link">Новинки</span>
+			<span class="menu-link">Акции</span>
+			<div class="menu-icons">
+				<a href="#" class="menu-icon"><img src="{% static 'app/img/cart.png' %}"></a>
+				<a href="#" class="menu-icon"><img src="{% static 'app/img/login.png' %}"></a>
+				<a><button class="menu-icon"><img src="{% static 'app/img/search.png' %}"></button></a>
+			</div>
+		</nav>
+	</div>
+</header>
+<body>
+	<div class="content">
+		{% block content %}
+		{% endblock %}
+	</div>
+</body>

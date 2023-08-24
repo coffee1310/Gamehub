@@ -1,0 +1,31 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block content %}
+<div class="slider">
+	<button class="slide-btn-left"><</button>
+	<div class="slide-one">
+		<div class="mouse-and-keyboard">
+			<a><img src="{% static 'app/img/mouse_and_keyboard.png' %}"></a>
+			<span><a href="#">Мыши и клавиатуры</a></span>
+		</div>
+
+		<div class="microphone-and-camera">
+			<div class="microphone">
+				<img src="{% static 'app/img/microphone.png' %}">
+				<span><a href="#">Микрофоны</a></span>
+			</div>
+			
+			<div class="camera">
+				<img src="{% static 'app/img/web-camera.png' %}">
+				<span><a href="#">Веб-камеры</a></span>
+			</div>
+		</div>
+
+		<div class="headphones">
+			<img src="{% static 'app/img/headphones.png' %}">
+			
+		</div>
+	</div>
+	<button class="slide-btn-right">></button>
+</div>
+{% endblock %}
