@@ -15,3 +15,8 @@ function openSearchField() {
         search.classList.add(animationName);
     }
 }
+
+function clearSearch() {
+    const searchInput = document.getElementById('search-inp');
+    searchInput.value = '';
+}
