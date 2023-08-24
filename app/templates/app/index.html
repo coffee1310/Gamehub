@@ -2,30 +2,30 @@
 {% load static %}
 {% block content %}
 <div class="slider">
-	<button class="slide-btn-left"><</button>
 	<div class="slide-one">
-		<div class="mouse-and-keyboard">
-			<a><img src="{% static 'app/img/mouse_and_keyboard.png' %}"></a>
-			<span><a href="#">Мыши и клавиатуры</a></span>
-		</div>
-
-		<div class="microphone-and-camera">
-			<div class="microphone">
-				<img src="{% static 'app/img/microphone.png' %}">
-				<span><a href="#">Микрофоны</a></span>
+		<button class="slide-btn-left"><</button>
+		<div class="slide-one-content">
+			<div class="mouse-and-keyboard">
+				<a href="#"><img src="{% static 'app/img/mouse_and_keyboard.png' %}"></a>
+				<span><a href="#">Мыши и клавиатуры</a></span>
 			</div>
-			
-			<div class="camera">
-				<img src="{% static 'app/img/web-camera.png' %}">
-				<span><a href="#">Веб-камеры</a></span>
+
+			<div class="microphone-and-camera">
+				<div class="microphone">
+					<a href="#"><img src="{% static 'app/img/microphone.png' %}"></a>
+					<span><a href="#">Микрофоны</a></span>
+				</div>
+				
+				<div class="camera">
+					<a href="#"><img src="{% static 'app/img/web-camera.png' %}"></a>
+					<span><a href="#">Веб-камеры</a></span>
+				</div>
 			</div>
 		</div>
-
 		<div class="headphones">
-			<img src="{% static 'app/img/headphones.png' %}">
-			
+			<a href="#"><img src="{% static 'app/img/headphones.png' %}"></a>
 		</div>
+		<button class="slide-btn-right">></button>
 	</div>
-	<button class="slide-btn-right">></button>
 </div>
 {% endblock %}

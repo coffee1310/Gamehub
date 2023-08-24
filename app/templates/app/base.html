@@ -14,9 +14,13 @@
 			<div class="menu-icons">
 				<a href="#" class="menu-icon"><img src="{% static 'app/img/cart.png' %}"></a>
 				<a href="#" class="menu-icon"><img src="{% static 'app/img/login.png' %}"></a>
-				<a><button class="menu-icon"><img src="{% static 'app/img/search.png' %}"></button></a>
+				<a><button class="menu-icon" onclick="openSearchField()"><img src="{% static 'app/img/search.png' %}"></button></a>
 			</div>
 		</nav>
+		<div class="search" id="search">
+			<input type="search" name="search" placeholder="Поиск" class="search-inp">
+			<button class="close-search">X</button>
+		</div>
 	</div>
 </header>
 <body>
@@ -24,4 +28,5 @@
 		{% block content %}
 		{% endblock %}
 	</div>
+	<script type="text/javascript" src="{% static 'app/js/main.js' %}"></script>
 </body>
