@@ -181,10 +181,18 @@ body {
 
 /* home page  */
 
+.slider {
+	display: flex;
+	justify-content: center;
+}
+
 .slide-one {
 	display: flex;
 	justify-content: center;
 	position: relative;
+}
+
+.slide-one-content {
 }
 
 .slide-btn-left {
@@ -211,7 +219,7 @@ body {
 .mouse-and-keyboard {
 	display: flex;
 	flex-direction: column;
-	width: 120%;
+	width: inherit;
 	text-align: center;
 	height: 350px;
 	overflow: hidden;
@@ -221,7 +229,7 @@ body {
 }
 
 .mouse-and-keyboard img {
-	width: 110%;
+	width: inherit;
 }
 
 .mouse-and-keyboard span {
@@ -232,7 +240,7 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: 120%;
+	width: inherit;
 }
 
 .microphone-and-camera div {
@@ -266,17 +274,56 @@ body {
 }
 
 .headphones {
-    height: 660px;
+    min-width: 350px;
     width: 25%;
-    margin-left: 145px;
+    margin-left: 10px;
     background-color: white;
     overflow: hidden;
     text-align: center;
     position: relative; 
 }
 
+.headphones a {
+	position: absolute;
+}
+
 .headphones img {
 	width: 100%;
+	min-height: 400px;
+	min-width: 500px;
 	transform: rotate(20deg);
     margin-top: -50px;
+    margin-left: -200px;
+}
+
+.description-1 {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    width: 80%;
+    height: 300px;
+    margin-top: 100px;
+}
+
+.description-1 img {
+    width: 40%;
+    height: 100%;
+}
+
+.description-1 div {
+    margin-left: 10px;
+    height: 300px;
+    background: linear-gradient(129deg, #292929 0%, rgba(89, 89, 89, 0.00) 100%);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.description-1 span {
+    font-size: 150%;
+    text-align: center;
+    color: white;
+    width: 100%;
 }
