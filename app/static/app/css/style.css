@@ -193,7 +193,7 @@ body {
 .slide-btn-left {
 	min-width: 40px;
 	height: 660px;
-	width: 40px;
+	width: 150px;
 	margin-right: 15px;
 	background-color: white;
 	font-size: 180%;
@@ -205,7 +205,7 @@ body {
 .slide-btn-right {
 	min-width: 40px;
 	height: 660px;
-	width: 40px;
+	width: 150px;
 	left: 1330px;
 	margin-left: 15px;
 	background-color: white;
@@ -313,7 +313,7 @@ body {
 .headphones {
     min-width: 350px;
     width: 80%;
-    margin-left: 205px;
+    margin-left: 235px;
     background-color: white;
     overflow: hidden;
     text-align: center;
@@ -339,53 +339,41 @@ body {
 	transform: rotate(20deg) scale(1.05);
 }
 
-.description-1 {
-    display: flex;
-    align-items: center;
-    margin: 0 auto;
-    width: 90%;
-    height: 300px;
-    margin-top: 200px;
+.description {
+	width: 100%;
+	height: 500px;
+	margin-top: 150px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #02181B;
+	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
-.description-1 img {
-    height: 100%;
+.description img {
+	margin-top: -100px;
+	width: 40%;
 }
 
-.description-1 div {
-    margin-left: 10px;
-    height: 300px;
-    background: linear-gradient(129deg, #292929 0%, rgba(89, 89, 89, 0.00) 100%);
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
+.description span {
+	color: white;
+	font-size: 280%;
+	width: 500px;
+	text-align: center;
+	margin-left: 100px;
+	margin-top: -100px;
 }
 
-.description-1 span {
-    font-size: 150%;
-    text-align: center;
-    color: white;
-    width: 100%;
-}
+
+
+
+
 
 @media screen and (max-width:1400px) {
 	.menu-icons {
 		margin-left: 0px;
 	}
 
-	.description-1 div {
-		height: 100%;
-	}
-
-	.description-1 span {
-		font-size: 130%;
-	}
-
-	.description-1 img {
-		width: 30%;
-	}
 }
 
 @media screen and (max-width: 1250px) {
@@ -415,5 +403,13 @@ body {
 
 	.headphones {
 		margin-left: 15px;
+	}
+
+	.slide-btn-left {
+		width: 40px;
+	}
+
+	.slide-btn-right {
+		width: 40px;
 	}
 }
