@@ -24,21 +24,26 @@ class ProductImage(models.Model):
         verbose_name = "Изображение"
         verbose_name_plural = "Изображения"
 
-    def image_tag(self):
-        return format_html('<img src="{}" width="50" height="50" />'.format(self.image.url))
-
     def __str__(self):
         return format_html(f'<img src="{self.image.url}" width="50" height="50" />')
 
 class Product(models.Model):
     name = models.CharField(max_length=255, verbose_name="Название")
+    cat = models.ForeignKey('Category', on_delete=models.CASCADE)
     price = models.PositiveIntegerField(verbose_name="Цена")
     description = models.TextField(verbose_name="Описание", blank=True)
     images = models.ManyToManyField(ProductImage, related_name="product_images", blank=True)
+    slug = models.SlugField(max_length=255, unique=True, verbose_name="URL")
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     comments = models.ManyToManyField("Comments", related_name='product_comments', blank=True)
 
+    def __str__(self):
+        return self.name
+
+class Category(models.Model):
+    name = models.CharField(max_length=255, verbose_name="Категория")
+    slug = models.SlugField(max_length=255, unique=True, verbose_name="URL")
 
 class Manufacturer(models.Model):
     title = models.CharField(max_length=255, verbose_name="Производитель")
@@ -75,6 +80,7 @@ class Mouse(Product):
         ("Laser", "Лазерный"),
         ("Optical LED", "Оптический светодиодный")
     )
+
     manufacturer = models.ForeignKey('Manufacturer',on_delete=models.CASCADE, verbose_name="Производитель")
     size = models.CharField(max_length=10, choices=SIZE_CHOICES, default="Middle", verbose_name="Размер мыши")
     DPI = models.CharField(max_length=20, choices=DPI_CHOSES, default="5000-10000")
@@ -84,6 +90,9 @@ class Mouse(Product):
     class Meta:
         verbose_name = "Мышь"
         verbose_name_plural = "Мыши"
+
+
+
 
 class Comments(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)

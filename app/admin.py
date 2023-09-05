@@ -4,6 +4,7 @@ from django.utils.safestring import mark_safe
 
 from .models import *
 # Register your models here.
+
 class UserAdmin(admin.ModelAdmin):
     list_display = ('username', 'email', 'first_name', 'last_name', 'middle_name', 'phone_number', 'address', 'date_joined', 'last_login')
 
@@ -15,10 +16,11 @@ class ProductImageAdmin(admin.ModelAdmin):
         return mark_safe(f'<img src="{obj.image.url}" width="50" height="50" />')
 
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ('name', 'price', 'description', 'created_at', 'updated_at', 'get_image')
+    list_display = ('name', 'price', 'description', 'created_at', 'updated_at',)
 
-    def get_image(self, obj):
-        return format_html('<img src="{}" width="50" height="50" />'.format(obj.image.url))
+
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = ('name', 'slug')
 
 
 class ManufacturerAdmin(admin.ModelAdmin):
@@ -33,6 +35,7 @@ class CommentsAdmin(admin.ModelAdmin):
 admin.site.register(User, UserAdmin)
 admin.site.register(ProductImage, ProductImageAdmin)
 admin.site.register(Product, ProductAdmin)
+admin.site.register(Category, CategoryAdmin)
 admin.site.register(Manufacturer, ManufacturerAdmin)
 admin.site.register(Mouse, MouseAdmin)
 admin.site.register(Comments, CommentsAdmin)
